@@ -1,16 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {PageOneComponent} from './componentsForPage1/page-one.component';
 
 const routes: Routes = [
-
-    {
-      path: '',
-      redirectTo: 'pageOne',
-      pathMatch: 'full',
-    },
     {
       path: 'pageOne',
-      loadChildren: './componentsForPage1/page-one.module#PageOneModule',
+      component: PageOneComponent
     },
     {
       path: 'lazy',

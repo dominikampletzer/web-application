@@ -6,7 +6,7 @@ import {AsyncApiService} from '../asyncApi/asyncApi.service';
   selector: 'app-page-one',
   template: `
     <div [hidden]="submitted">
-      <h1>Test Form</h1>
+      <h1>Test Fall 1</h1>
       <form (ngSubmit)="onSubmit()" #testForm="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
@@ -24,7 +24,7 @@ import {AsyncApiService} from '../asyncApi/asyncApi.service';
         <div class="form-group">
           <label for="sex">Geschlecht</label>
           <select class="form-control" id="sex" required [(ngModel)]="formModel.sex" name="sex" #sex="ngModel">
-            <option *ngFor="let s of sexArray" [value]="s">{{ s }}</option>
+            <option id="{{ 'sexOption' + i }}" *ngFor="let s of sexArray; let i = index" [value]="s">{{ s }}</option>
           </select>
           <div [hidden]="sex.valid || sex.pristine" class="alert alert-danger">
             Geschlecht ist verpflichtend

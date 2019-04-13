@@ -11,6 +11,9 @@ import {
   MatProgressSpinnerModule,
   MatSnackBarModule,
 } from '@angular/material';
+import {SnackBarComponent} from './snack-bar.component';
+import {SnackBarHelperService} from './snack-bar-helper.service';
+import {CommonModule} from '@angular/common';
 
 const MATERIAL_MODULES = [
   MatButtonModule,
@@ -25,8 +28,19 @@ const MATERIAL_MODULES = [
 ];
 
 @NgModule({
-  imports: MATERIAL_MODULES,
-  exports: MATERIAL_MODULES
+  imports: [
+    CommonModule,
+    MATERIAL_MODULES],
+  declarations: [
+    SnackBarComponent
+  ],
+  entryComponents: [
+    SnackBarComponent,
+  ],
+  providers: [
+    SnackBarHelperService,
+  ],
+  exports: [MATERIAL_MODULES],
 })
 export class CustomMaterialModule {
 }

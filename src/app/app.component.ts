@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-root',
   template: `
+    <h1>SQS SS-2019 Dummy-Applikation Ampletzer/Voit</h1>
+
     <button (click)="navigateTo('pageOne')">Page One</button>
     <button (click)="navigateTo('lazy')">Lazy Module</button>
 
@@ -13,7 +15,6 @@ import {Router} from '@angular/router';
 export class AppComponent {
 
   constructor(private router: Router) {
-
   }
 
 
