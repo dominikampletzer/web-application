@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Testfälle
+
+**Fall 1:**
+- Einfache Seitennavigation
+- Einfacher Input
+
+**Fall 2:**
+- Lazy Loading (Asynchron)
+- Sonst wie Fall 1
+
+**Fall 3:**
+- Animation
+- Dynamisches nachladen von Daten
+- Abwarten bis Komponente geladen ist
+
+**Fall 4:**
+- Button drücken
+- Dialog öffnen
+- Inhalt des Dialogs wird Asynchron geladen
+- Innerhalb des Dialogs asynchron Dialog
+
+**Fall 5:**
+- Neuen Browser Tab öffnen
+- Und im neuen Tab fortfahren
+- Und eventuell zurück navigieren in vorherigen Browser Tab
