@@ -8,13 +8,20 @@ import {SnackBarHelperService} from '../uiFrameworks/snack-bar-helper.service';
     <div>
       <h1>Test Fall 2</h1>
 
-      <ol>
-        <li *ngFor="let element of data, let idx = index" id="{{ 'customItem' + idx }}" (click)="triggerSnackbar(element)">
-          <span>{{ element.title }}</span>
-          <span>{{ element.description }}</span>
-          <span>{{ element.someNumber}}</span>
-        </li>
-      </ol>
+      <div *ngIf="!data">
+        <mat-progress-spinner [color]="'accent'" [mode]="'indeterminate'" [value]="50">
+        </mat-progress-spinner>
+      </div>
+      <div *ngIf="data">
+
+        <ol>
+          <li *ngFor="let element of data, let idx = index" id="{{ 'customItem' + idx }}" (click)="triggerSnackbar(element)">
+            <span>{{ element.title }}</span>
+            <span>{{ element.description }}</span>
+            <span>{{ element.someNumber}}</span>
+          </li>
+        </ol>
+      </div>
 
     </div>
     <div>

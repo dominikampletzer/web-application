@@ -7,6 +7,8 @@ import {AsyncApiModule} from './asyncApi/asyncApi.module';
 import {CustomMaterialModule} from './uiFrameworks/custom-material.module';
 import {PageOneComponent} from './componentsForPage1/page-one.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DialogComponent} from './dialog/dialog.component';
+import {DialogHelperService} from './dialog/dialog-helper.service';
 
 @NgModule({
   imports: [
@@ -19,9 +21,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   declarations: [
     AppComponent,
-    PageOneComponent
+    PageOneComponent,
+    DialogComponent
   ],
-  providers: [],
+  providers: [DialogHelperService],
+  entryComponents: [DialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

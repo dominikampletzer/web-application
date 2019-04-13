@@ -14,20 +14,17 @@ Statt dessen werden Grundlegende Fälle überprüft wie:
 
 **Fall 2:**
 - Lazy Loading Navigation (Asynchron)
-- Sonst wie Fall 1
-
-**Fall 3:**
 - Animation
 - Dynamisches nachladen von Daten
 - Abwarten bis Komponente geladen ist und auf diese Klicken 
 
-**Fall 4:**
+**Fall 3:**
 - Button drücken
 - Dialog öffnen
 - Inhalt des Dialogs wird Asynchron geladen
 - Innerhalb des Dialogs asynchron Dialog
 
-**Fall 5:**
+**Fall 4:**
 - Neuen Browser Tab öffnen
 - Und im neuen Tab fortfahren
 - Und eventuell zurück navigieren in vorherigen Browser Tab

@@ -58,7 +58,7 @@ import {AsyncApiService} from '../asyncApi/asyncApi.service';
 
 export class PageOneComponent {
   public sexArray = ['Weiblich', 'Männlich', 'Unbekannt', 'Nicht Angegeben', 'Neutral', 'Nicht Bekannt'];
-  public formModel = new Person(uuid(), 'Musterman', this.sexArray[0], 'Dorotea');
+  public formModel = new Person(uuid(), '', this.sexArray[2], '');
   public submitted = false;
 
   public constructor(private asyncApi: AsyncApiService) {
