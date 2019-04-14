@@ -11,6 +11,8 @@ import {DialogComponent} from './dialog/dialog.component';
     <button (click)="navigateTo('pageOne')">Page One</button>
     <button (click)="navigateTo('lazy')">Lazy Module</button>
     <button (click)="openDialog()">Dialog Öffnen</button>
+    <button (click)="openPageInNewTab('pageOne')">Page One in neuem Tab</button>
+    <button (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
 
     <router-outlet></router-outlet>
   `,
@@ -22,7 +24,11 @@ export class AppComponent {
   }
 
   public navigateTo(path: string): void {
-    this.router.navigate([path]);
+    this.router.navigate([path]).then();
+  }
+
+  public openPageInNewTab(path: string): void {
+    window.open('/' + path);
   }
 
   public openDialog(): void {
