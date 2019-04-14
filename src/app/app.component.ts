@@ -32,6 +32,6 @@ export class AppComponent {
   }
 
   public openDialog(): void {
-    this.dialogHelper.openDialog(DialogComponent, 'BLUB');
+    this.dialogHelper.openDialog(DialogComponent, {data: true});
   }
 }

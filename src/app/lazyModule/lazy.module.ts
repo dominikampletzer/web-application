@@ -15,6 +15,9 @@ import {CustomMaterialModule} from '../uiFrameworks/custom-material.module';
   declarations: [
     LazyComponent,
   ],
+  exports: [
+    LazyComponent
+  ]
 })
 export class LazyModule {
 }
