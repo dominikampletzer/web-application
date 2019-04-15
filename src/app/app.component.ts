@@ -15,6 +15,8 @@ import {DialogComponent} from './dialog/dialog.component';
     <button (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
 
     <router-outlet></router-outlet>
+
+    <input type="file">
   `,
 })
 export class AppComponent {

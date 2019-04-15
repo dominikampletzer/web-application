@@ -29,6 +29,9 @@ Statt dessen werden Grundlegende Fälle überprüft wie:
 - Und im neuen Tab fortfahren
 - Und eventuell zurück navigieren in vorherigen Browser Tab
 
+**Fall 4:**
+- Datei Upload
+
 
 ## Installieren und Starten || Get Started
 
