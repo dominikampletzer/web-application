@@ -6,17 +6,20 @@ import {DialogComponent} from './dialog/dialog.component';
 @Component({
   selector: 'app-root',
   template: `
+    <!--    todo FH-Rosenheim Logo und aufhübschen-->
     <h1>SQS SS-2019 Dummy-Applikation Ampletzer/Voit</h1>
 
     <button (click)="navigateTo('pageOne')">Page One</button>
     <button (click)="navigateTo('lazy')">Lazy Module</button>
+    <button (click)="navigateTo('upload')">Upload</button>
+    <button (click)="navigateTo('iFrame')">iFrame</button>
     <button (click)="openDialog()">Dialog Öffnen</button>
     <button (click)="openPageInNewTab('pageOne')">Page One in neuem Tab</button>
     <button (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
 
     <router-outlet></router-outlet>
 
-    <input type="file">
+
   `,
 })
 export class AppComponent {

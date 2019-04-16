@@ -29,9 +29,11 @@ Statt dessen werden Grundlegende Fälle überprüft wie:
 - Und im neuen Tab fortfahren
 - Und eventuell zurück navigieren in vorherigen Browser Tab
 
-**Fall 4:**
+**Fall 5:**
 - Datei Upload
 
+**Fall 6:**
+- i-frame
 
 ## Installieren und Starten || Get Started
 
