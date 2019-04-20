@@ -18,6 +18,9 @@ import {DialogComponent} from './dialog/dialog.component';
     <button (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
 
     <router-outlet></router-outlet>
+    <div style="bottom: 30px; position: absolute">
+      <button (click)="navigateTo('testsAmpletzer')">Test Ergebnisse Ampletzer</button>
+    </div>
 
 
   `,

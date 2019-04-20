@@ -21,6 +21,10 @@ const routes: Routes = [
       path: 'lazy',
       loadChildren: './lazyModule/lazy.module#LazyModule'
     },
+    {
+      path: 'testsAmpletzer',
+      loadChildren: './test-results-ampletzer/test-results-ampletzer.module#TestResultsAmpletzerModule'
+    },
   ]
 ;
 
