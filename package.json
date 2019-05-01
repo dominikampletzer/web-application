@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e:no-build": "ng e2e --webdriver-update=true --devServerTarget=",
-    "pro_no_ng": "node_modules/.bin/protractor e2e/protractor.conf.js"
+    "pro_no_ng": "node_modules/.bin/protractor e2e/protractor/protractor.conf.js"
   },
   "private": true,
   "dependencies": {
