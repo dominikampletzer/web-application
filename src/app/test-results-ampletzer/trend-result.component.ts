@@ -1,8 +1,8 @@
 import {AfterViewChecked, Component, ElementRef, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-overview-component',
-  template: `
+  selector: 'app-trend-component',
+  template: `<div></div>
   `,
 })
 export class TrendResultComponent implements OnInit, AfterViewChecked {
@@ -30,7 +30,7 @@ export class TrendResultComponent implements OnInit, AfterViewChecked {
         "geo": "",
         "time": "2017-01-01 2018-12-31"
       }, {"keyword": "webdriver.io", "geo": "", "time": "2017-01-01 2018-12-31"}, {
-        "keyword": "webdriverio",
+        "keyword": "webdriver",
         "geo": "",
         "time": "2017-01-01 2018-12-31"
       }], "category": 0, "property": ""
