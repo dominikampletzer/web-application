@@ -9,13 +9,13 @@ import {DialogComponent} from './dialog/dialog.component';
     <!--    todo FH-Rosenheim Logo und aufhübschen-->
     <h1>SQS SS-2019 Dummy-Applikation Ampletzer/Voit</h1>
 
-    <button (click)="navigateTo('pageOne')">Page One</button>
-    <button (click)="navigateTo('lazy')">Lazy Module</button>
+    <button (click)="navigateTo('form')" id="formButton">Form</button>
+    <button style="color:blue" (click)="navigateTo('lazy')">Lazy Module</button>
     <button (click)="navigateTo('upload')">Upload</button>
     <button (click)="navigateTo('iFrame')">iFrame</button>
-    <button (click)="openDialog()">Dialog Öffnen</button>
-    <button (click)="openPageInNewTab('pageOne')">Page One in neuem Tab</button>
-    <button (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
+    <button id="openDialogButton" (click)="openDialog()">Dialog Öffnen</button>
+    <button id="formInNewTabButton" (click)="openPageInNewTab('form')">Form in neuem Tab</button>
+    <button id="lazyInNewTabButton" (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
 
     <router-outlet></router-outlet>
     <div style="bottom: 30px; position: absolute">

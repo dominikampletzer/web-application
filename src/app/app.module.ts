@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {AsyncApiModule} from './asyncApi/asyncApi.module';
 import {CustomMaterialModule} from './uiFrameworks/custom-material.module';
-import {PageOneComponent} from './componentsForPage/page-one.component';
+import {FormComponent} from './componentsForPage/form.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DialogComponent} from './dialog/dialog.component';
 import {DialogHelperService} from './dialog/dialog-helper.service';
@@ -23,7 +23,7 @@ import {IFrameComponent} from './componentsForPage/i-frame.component';
   ],
   declarations: [
     AppComponent,
-    PageOneComponent,
+    FormComponent,
     DialogComponent,
     UploadComponent,
     IFrameComponent,

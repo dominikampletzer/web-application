@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PageOneComponent} from './componentsForPage/page-one.component';
+import {FormComponent} from './componentsForPage/form.component';
 import {IFrameComponent} from './componentsForPage/i-frame.component';
 import {UploadComponent} from './componentsForPage/upload.component';
 
 const routes: Routes = [
     {
-      path: 'pageOne',
-      component: PageOneComponent
+      path: 'form',
+      component: FormComponent
     },
     {
       path: 'iFrame',

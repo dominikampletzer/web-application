@@ -1,4 +1,4 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to web-application!');
+    expect(page.getTitleText()).toEqual('SQS SS-2019 Dummy-Applikation Ampletzer/Voit');
   });
 });

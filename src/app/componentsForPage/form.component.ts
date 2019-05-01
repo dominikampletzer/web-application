@@ -3,10 +3,10 @@ import {v1 as uuid} from 'uuid';
 import {AsyncApiService} from '../asyncApi/asyncApi.service';
 
 @Component({
-  selector: 'app-page-one',
+  selector: 'app-form',
   template: `
     <div [hidden]="submitted">
-      <h1>Test Fall 1</h1>
+      <h1 id="useCaseTitle">Test Fall 1</h1>
       <form (ngSubmit)="onSubmit()" #testForm="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
@@ -56,7 +56,7 @@ import {AsyncApiService} from '../asyncApi/asyncApi.service';
   `
 })
 
-export class PageOneComponent {
+export class FormComponent {
   public sexArray = ['Weiblich', 'Männlich', 'Unbekannt', 'Nicht Angegeben', 'Neutral', 'Nicht Bekannt'];
   public formModel = new Person(uuid(), '', this.sexArray[2], '');
   public submitted = false;
