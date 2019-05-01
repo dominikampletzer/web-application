@@ -1,14 +1,9 @@
-import {browser, by, element, ElementFinder} from 'protractor';
+import {browser, by, element} from 'protractor';
 
 export class AppPage {
 
   public uploadButton = element(by.buttonText('Upload'));
   public iFrameButton = element(by.partialButtonText('iFr'));
-
-  public formInNewTabButton = element(by.id('formInNewTabButton'));
-  public lazyModuleInNewTabButton = element(by.id('lazyInNewTabButton'));
-  private useCaseTitle: ElementFinder;
-  private formSaveButton: ElementFinder;
 
   navigateTo() {
     return browser.get('/');
