@@ -6,15 +6,15 @@ import {SnackBarHelperService} from '../uiFrameworks/snack-bar-helper.service';
   selector: 'app-lazy',
   template: `
     <div>
-      <h1>Test Fall 2</h1>
+      <h1 id="useCaseTitle">Test Fall 2</h1>
 
-      <div *ngIf="!data">
+      <div id='spinnerContainer' *ngIf="!data">
         <mat-progress-spinner [color]="'accent'" [mode]="'indeterminate'" [value]="50">
         </mat-progress-spinner>
       </div>
       <div *ngIf="data">
 
-        <ol>
+        <ol id="list">
           <li *ngFor="let element of data, let idx = index" id="{{ 'customItem' + idx }}" (click)="triggerSnackbar(element)">
             <span>{{ element.title }}</span>
             <span>{{ element.description }}</span>

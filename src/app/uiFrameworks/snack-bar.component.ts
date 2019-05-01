@@ -4,7 +4,7 @@ import {MAT_SNACK_BAR_DATA, MatSnackBarRef} from '@angular/material';
 @Component({
   selector: 'app-snackbar',
   template: `
-    <div *ngIf="message">
+    <div  *ngIf="message">
       <div id="snackBarMessage">{{ message }}</div>
     </div>
   `

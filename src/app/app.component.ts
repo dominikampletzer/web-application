@@ -10,7 +10,7 @@ import {DialogComponent} from './dialog/dialog.component';
     <h1>SQS SS-2019 Dummy-Applikation Ampletzer/Voit</h1>
 
     <button (click)="navigateTo('form')" id="formButton">Form</button>
-    <button style="color:blue" (click)="navigateTo('lazy')">Lazy Module</button>
+    <button class="lazy" (click)="navigateTo('lazy')">Lazy Module</button>
     <button (click)="navigateTo('upload')">Upload</button>
     <button (click)="navigateTo('iFrame')">iFrame</button>
     <button id="openDialogButton" (click)="openDialog()">Dialog Öffnen</button>
