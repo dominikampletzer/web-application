@@ -2,7 +2,7 @@ import {browser, by, element} from 'protractor';
 
 export class AppPage {
 
-  public uploadButton = element(by.buttonText('Upload'));
+
   public iFrameButton = element(by.partialButtonText('iFr'));
 
   navigateTo() {

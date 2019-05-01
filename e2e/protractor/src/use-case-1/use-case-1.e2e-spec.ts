@@ -1,5 +1,5 @@
 import {browser, by, element, protractor, ProtractorExpectedConditions} from 'protractor';
-import {UseCase1Po} from './useCase1.po';
+import {UseCase1Po} from './use-case-1.po';
 
 describe('use-case-1 Navigation and Form Input', () => {
   let page: UseCase1Po;

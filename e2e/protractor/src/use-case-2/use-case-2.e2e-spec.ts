@@ -1,5 +1,5 @@
 import {browser, protractor, ProtractorExpectedConditions} from 'protractor';
-import {UseCase2Po} from './useCase2.po';
+import {UseCase2Po} from './use-case-2.po';
 
 describe('use-case-2 Navigation to lazy module and load data', () => {
   let page: UseCase2Po;

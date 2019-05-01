@@ -1,5 +1,5 @@
 import {browser, by, element, protractor, ProtractorExpectedConditions} from 'protractor';
-import {UseCase4Po} from './useCase4.po';
+import {UseCase4Po} from './use-case-4.po';
 
 describe('use-case-4 open form in new Tab and interact', () => {
   let page: UseCase4Po;
