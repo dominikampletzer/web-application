@@ -8,15 +8,15 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
   selector: 'app-dialog',
   template: `
     <div>
-      <h1>Test Fall 3</h1>
+      <h1 id="dialogTitle">Test Fall 3</h1>
 
-      <div *ngIf="!customItems">
+      <div id="spinner" *ngIf="!customItems">
         <mat-progress-spinner [color]="'accent'" [mode]="'indeterminate'" [value]="50">
         </mat-progress-spinner>
       </div>
       <div *ngIf="customItems">
 
-        <ol>
+        <ol id="list">
           <li *ngFor="let element of customItems, let idx = index" id="{{ 'customItem' + idx }}" (click)="itemClicked( element)">
             <span>{{ element.title }}</span>
             <span>{{ element.description }}</span>

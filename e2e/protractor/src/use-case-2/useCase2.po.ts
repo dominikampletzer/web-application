@@ -2,26 +2,14 @@ import {browser, by, element, ElementFinder, promise} from 'protractor';
 
 export class UseCase2Po {
 
-  public lazyModuleButton = element(by.css('.lazy'));
-  private useCaseTitle: ElementFinder;
+  public lazyModuleButton: ElementFinder = element(by.css('.lazy'));
+  public title: ElementFinder = element(by.id('useCaseTitle'));
+  public list: ElementFinder = element(by.id('list'));
+  public snackBarMessage: ElementFinder = element(by.id('snackBarMessage'));
+  public spinner: ElementFinder = element(by.id('spinnerContainer'));
 
   navigateTo() {
     return browser.get('/');
-  }
-
-  getUseCaseTitle(): ElementFinder {
-    if (!this.useCaseTitle) {
-      this.useCaseTitle = element(by.id('useCaseTitle'));
-    }
-    return this.useCaseTitle;
-  }
-
-  getSpinner(): ElementFinder {
-    return element(by.id('spinnerContainer'));
-  }
-
-  getList(): ElementFinder {
-    return element(by.id('list'));
   }
 
   getRow(index?: number): ElementFinder {
@@ -32,7 +20,4 @@ export class UseCase2Po {
     return element(by.id('customItem' + index || '0')).getText();
   }
 
-  getSnackBar(): ElementFinder {
-    return element(by.id('snackBarMessage'));
-  }
 }

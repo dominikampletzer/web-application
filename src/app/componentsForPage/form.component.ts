@@ -48,7 +48,7 @@ import {AsyncApiService} from '../asyncApi/asyncApi.service';
       </div>
       <div class="row">
         <div class="col-xs-3">Geschlecht</div>
-        <div class="col-xs-9" id="sentFirstSex">{{ formModel.sex }}</div>
+        <div class="col-xs-9" id="sentSex">{{ formModel.sex }}</div>
       </div>
       <br>
       <button class="btn btn-primary" (click)="submitted=false">bearbeiten</button>

@@ -12,8 +12,8 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
   it('Should navigate To Component', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
-    browser.wait(conditions.visibilityOf(page.getUseCaseTitle()), 1000);
-    expect(page.getUseCaseTitle().getText()).toEqual('Test Fall 2');
+    browser.wait(conditions.visibilityOf(page.title), 1000);
+    expect(page.title.getText()).toEqual('Test Fall 2');
   });
 
   it('Should wait for Data', () => {
@@ -21,10 +21,10 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.lazyModuleButton.click();
 
     browser.wait(conditions.and(
-      conditions.visibilityOf(page.getUseCaseTitle()),
-      conditions.invisibilityOf(page.getSpinner()))
+      conditions.visibilityOf(page.title),
+      conditions.invisibilityOf(page.spinner))
       , 5000);
-    browser.wait(conditions.visibilityOf(page.getList()), 1000);
+    browser.wait(conditions.visibilityOf(page.list), 1000);
     expect(page.getRowText(0)).toBe('Item Nr 1ein total nutzloses Objekt42');
     expect(page.getRowText(1)).toBe('Item Nr 2ein total nutzloses Objekt3');
     expect(page.getRowText(2)).toBe('Item Nr 3ein total nutzloses Teil17');
@@ -34,12 +34,12 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
 
-    browser.wait(conditions.visibilityOf(page.getUseCaseTitle()), 1000);
-    browser.wait(conditions.invisibilityOf(page.getSpinner()), 5000);
-    browser.wait(conditions.visibilityOf(page.getList()), 1000);
+    browser.wait(conditions.visibilityOf(page.title), 1000);
+    browser.wait(conditions.invisibilityOf(page.spinner), 5000);
+    browser.wait(conditions.visibilityOf(page.list), 1000);
 
     page.getRow(1).click();
-    browser.wait(conditions.visibilityOf(page.getSnackBar()), 1000);
-    expect(page.getSnackBar().getText()).toBe('Item Nr 2 wurde geklickt');
+    browser.wait(conditions.visibilityOf(page.snackBarMessage), 1000);
+    expect(page.snackBarMessage.getText()).toBe('Item Nr 2 wurde geklickt');
   });
 });
