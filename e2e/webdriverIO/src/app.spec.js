@@ -17,7 +17,7 @@ class AppPage {
 describe('workspace-project App', () => {
   it('should display welcome message', () => {
     let page = new AppPage();
-    AppPage.navigateTo();
+    page.navigateTo();
     assert.equal(page.getTitleText(), 'SQS SS-2019 Dummy-Applikation Ampletzer/Voit');
   });
 

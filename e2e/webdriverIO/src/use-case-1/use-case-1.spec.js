@@ -37,12 +37,15 @@ class UseCase1Po {
     return $('#sentSex');
   }
 
-
+  navigateTo() {
+    browser.url('http://localhost:4200/');
+  }
 
 }
 
 
 describe('use-case-1 Navigation and Form Input', () => {
+  let page;
   beforeEach(() => {
     page = new UseCase1Po();
   });
@@ -61,17 +64,12 @@ describe('use-case-1 Navigation and Form Input', () => {
     page.formFirstName.setValue('Dominik');
 
     page.formSex.click();
-    browser.waitUntil(() => {
-      return $('#sexOption1').isDisplayed()
-    }, 1000);
+    $('#sexOption1').waitForDisplayed(1000);
     $('#sexOption1').click();
 
     page.saveButton.click();
 
-    browser.waitUntil(() => {
-        return page.sentName.isDisplayed()
-      },
-      5000);
+    page.sentName.waitForDisplayed(5000);
     assert(page.sentName.getText(), 'Ampletzer');
     assert(page.sentFirstName.getText(), 'Dominik');
     assert(page.sentSex.getText(), 'Männlich');
