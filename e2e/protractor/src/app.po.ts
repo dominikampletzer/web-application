@@ -2,9 +2,6 @@ import {browser, by, element} from 'protractor';
 
 export class AppPage {
 
-
-  public iFrameButton = element(by.partialButtonText('iFr'));
-
   navigateTo() {
     return browser.get('/');
   }
