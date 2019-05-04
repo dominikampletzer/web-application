@@ -1,7 +1,7 @@
-import {browser, by, element, ElementFinder} from 'protractor';
+import {by, element, ElementFinder} from 'protractor';
+import {AppPage} from '../app.po';
 
-export class UseCase1Po {
-
+export class UseCase1Po extends AppPage {
   public formButton: ElementFinder = element(by.id('formButton'));
   public formName: ElementFinder = element(by.id('name'));
   public formFirstName: ElementFinder = element(by.id('first-name'));
@@ -11,9 +11,4 @@ export class UseCase1Po {
   public sentName: ElementFinder = element(by.id('sentName'));
   public sentFirstName: ElementFinder = element(by.id('sentFirstName'));
   public sentSex: ElementFinder = element(by.id('sentSex'));
-
-  navigateTo() {
-    return browser.get('/');
-  }
-
 }
