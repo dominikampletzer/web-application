@@ -58,7 +58,7 @@ describe('use-case-3 open dialog with overlapping dialog', () => {
     page.navigateTo();
     page.dialogOpenButton.click();
     page.firstTitle.waitForDisplayed(1000);
-    assert(page.firstTitle.getText(), 'Test Fall 3');
+    assert.equal(page.firstTitle.getText(), 'Test Fall 3');
   });
 
   it('Should wait for Data', () => {
@@ -69,9 +69,9 @@ describe('use-case-3 open dialog with overlapping dialog', () => {
     page.spinner.waitForDisplayed(5000, true);
     page.firstList.waitForDisplayed(1000);
 
-    assert(page.getRowText(0), 'Item Nr 1ein total nutzloses Objekt42');
-    assert(page.getRowText(1), 'Item Nr 2ein total nutzloses Objekt3');
-    assert(page.getRowText(2), 'Item Nr 3ein total nutzloses Teil17');
+    assert.equal(page.getRowText(0), 'Item Nr 1ein total nutzloses Objekt42');
+    assert.equal(page.getRowText(1), 'Item Nr 2ein total nutzloses Objekt3');
+    assert.equal(page.getRowText(2), 'Item Nr 3ein total nutzloses Teil17');
   });
 
   it('Should open overlapping Dialog', () => {
@@ -85,7 +85,7 @@ describe('use-case-3 open dialog with overlapping dialog', () => {
     page.getRow(1).click();
 
     page.getSecondTitle().waitForDisplayed(1000);
-    assert(page.getSecondTitle().getText(), 'Test Fall 3');
+    assert.equal(page.getSecondTitle().getText(), 'Test Fall 3');
   });
 
   it('Should interact with overlapping Dialog', () => {
@@ -99,18 +99,18 @@ describe('use-case-3 open dialog with overlapping dialog', () => {
     page.getRow(1).click();
 
     page.getSecondTitle().waitForDisplayed(1000);
-    assert(page.getSecondTitle().getText(), 'Test Fall 3');
+    assert.equal(page.getSecondTitle().getText(), 'Test Fall 3');
 
     page.getSecondTitle().waitForDisplayed(1000);
     page.spinner.waitForDisplayed(5000, true);
     page.getSecondList().waitForDisplayed(1000);
 
-    assert(page.getSecondListRow(0).getText(), 'Item Nr 1ein total nutzloses Objekt42');
-    assert(page.getSecondListRow(1).getText(), 'Item Nr 2ein total nutzloses Objekt3');
-    assert(page.getSecondListRow(2).getText(), 'Item Nr 3ein total nutzloses Teil17');
+    assert.equal(page.getSecondListRow(0).getText(), 'Item Nr 1ein total nutzloses Objekt42');
+    assert.equal(page.getSecondListRow(1).getText(), 'Item Nr 2ein total nutzloses Objekt3');
+    assert.equal(page.getSecondListRow(2).getText(), 'Item Nr 3ein total nutzloses Teil17');
 
     page.getSecondListRow(2).click();
     page.snackBarMessage.waitForDisplayed(1000);
-    assert(page.snackBarMessage.getText(), 'Item Nr 3 wurde geklickt');
+    assert.equal(page.snackBarMessage.getText(), 'Item Nr 3 wurde geklickt');
   });
 });

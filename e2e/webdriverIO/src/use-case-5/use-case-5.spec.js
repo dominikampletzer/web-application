@@ -1,11 +1,31 @@
-import {browser, protractor, ProtractorExpectedConditions} from 'protractor';
-import {UseCase5Po} from './use-case-5.po';
-import * as path from 'path';
+const assert = require('assert');
+const path = require('path');
+
+class UseCase5Po {
+  get toUploadButton() {
+    return $("#upload");
+  }
+
+  get title() {
+    return $('#useCaseTitle');
+  }
+
+  get uploadInput() {
+    return $('<input />');
+  }
+
+  get snackBarMessage() {
+    return $('#snackBarMessage');
+  }
+
+  navigateTo() {
+    browser.url('http://localhost:4200/');
+  }
+
+}
 
 describe('use-case-5 open upload-window and interact', () => {
-  let page: UseCase5Po;
-  const conditions: ProtractorExpectedConditions = protractor.ExpectedConditions;
-
+  let page;
   beforeEach(() => {
     page = new UseCase5Po();
   });
@@ -13,7 +33,7 @@ describe('use-case-5 open upload-window and interact', () => {
   it('Should navigate to upload-component', () => {
     page.navigateTo();
     page.toUploadButton.click();
-    expect(page.title.getText()).toEqual('Test Fall 5');
+    assert.equal(page.title.getText(), 'Test Fall 5');
   });
 
   it('Should pass path to file-input and fake upload', () => {
@@ -26,17 +46,18 @@ describe('use-case-5 open upload-window and interact', () => {
     const fileToUpload = './forUpload.txt';
     const absolutePath = path.resolve(__dirname, fileToUpload);
 
-    page.uploadInput.sendKeys(absolutePath);
+    page.uploadInput.setValue(absolutePath);
 
     // sendKeys triggers upload. Snackbar shows fileTitle and memory size
-    browser.wait(conditions.visibilityOf(page.snackBarMessage), 5000);
-    expect(page.snackBarMessage.getText()).toBe('forUpload.txt 27');
+    page.snackBarMessage.waitForDisplayed(5000);
+    assert.equal(page.snackBarMessage.getText(), 'forUpload.txt 27');
 
     /* Chrome und FireFox verhindern, dass der Pfad aus File-Inputs herausgelesen wird!
+     Auf Chrome wird mit fakepath verschleiert. auf FireFox bekommt man ihn garnicht heraus!
      Aus diesem Grund wird er mit fakepath verschleiert. Dennoch kann es verwendet werden.
      Auf nicht Windows system, muss diese Zeile auskommentiert werden.
      */
-    expect(page.uploadInput.getAttribute('value')).toBe('C:\\fakepath\\forUpload.txt');
+    // assert.equal(page.uploadInput.getValue(), 'C:\\fakepath\\forUpload.txt');
   });
 
 });

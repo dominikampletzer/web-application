@@ -70,8 +70,8 @@ describe('use-case-1 Navigation and Form Input', () => {
     page.saveButton.click();
 
     page.sentName.waitForDisplayed(5000);
-    assert(page.sentName.getText(), 'Ampletzer');
-    assert(page.sentFirstName.getText(), 'Dominik');
-    assert(page.sentSex.getText(), 'Männlich');
+    assert.equal(page.sentName.getText(), 'Ampletzer');
+    assert.equal(page.sentFirstName.getText(), 'Dominik');
+    assert.equal(page.sentSex.getText(), 'Männlich');
   });
 });

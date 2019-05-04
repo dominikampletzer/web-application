@@ -21,6 +21,7 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
+      './e2e/webdriverIO/**/*5.spec.js'
         // 'path/to/excluded/files'
     ],
     //

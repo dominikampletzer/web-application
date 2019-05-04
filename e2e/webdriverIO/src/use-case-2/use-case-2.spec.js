@@ -46,7 +46,7 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
     page.title.waitForDisplayed(1000);
-    assert(page.title.getText(), 'Test Fall 2');
+    assert.equal(page.title.getText(), 'Test Fall 2');
   });
 
   it('Should wait for Data', () => {
@@ -57,9 +57,9 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.spinner.waitForDisplayed(5000, true);
     page.list.waitForDisplayed(1000);
 
-    assert(page.getRowText(0), 'Item Nr 1ein total nutzloses Objekt42');
-    assert(page.getRowText(1), 'Item Nr 2ein total nutzloses Objekt3');
-    assert(page.getRowText(2), 'Item Nr 3ein total nutzloses Teil17');
+    assert.equal(page.getRowText(0), 'Item Nr 1ein total nutzloses Objekt42');
+    assert.equal(page.getRowText(1), 'Item Nr 2ein total nutzloses Objekt3');
+    assert.equal(page.getRowText(2), 'Item Nr 3ein total nutzloses Teil17');
   });
 
   it('Should interact with Data', () => {
@@ -72,6 +72,6 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
 
     page.getRow(1).click();
     page.snackBarMessage.waitForDisplayed(1000);
-    assert(page.snackBarMessage.getText(), 'Item Nr 2 wurde geklickt');
+    assert.equal(page.snackBarMessage.getText(), 'Item Nr 2 wurde geklickt');
   });
 });
