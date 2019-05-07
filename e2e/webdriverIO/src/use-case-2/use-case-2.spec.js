@@ -1,40 +1,5 @@
 const assert = require('assert');
-
-class UseCase2Po {
-  get lazyModuleButton() {
-    return $('.lazy');
-  }
-
-  get title() {
-    return $('#useCaseTitle');
-  }
-
-  get list() {
-    return $('#list');
-  }
-
-  get snackBarMessage() {
-    return $('#snackBarMessage');
-  }
-
-  get spinner() {
-    return $('#spinnerContainer');
-  }
-
-  getRow(index) {
-    return $('#customItem' + (index || '0'));
-  }
-
-  getRowText(index) {
-    return $('#customItem' + (index || '0')).getText();
-  }
-
-
-  navigateTo() {
-    browser.url('http://localhost:4200/');
-  }
-
-}
+const UseCase2Po = require('./use-case-2.po.js');
 
 describe('use-case-2 Navigation to lazy module and load data', () => {
   let page;
@@ -46,14 +11,14 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
     page.title.waitForDisplayed(1000);
-    assert.equal(page.title.getText(), 'Test Fall 2');
+    assert.equal(page.useCaseTitle.getText(), 'Test Fall 2');
   });
 
   it('Should wait for Data', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
 
-    page.title.waitForDisplayed(1000);
+    page.useCaseTitle.waitForDisplayed(1000);
     page.spinner.waitForDisplayed(5000, true);
     page.list.waitForDisplayed(1000);
 
@@ -66,7 +31,7 @@ describe('use-case-2 Navigation to lazy module and load data', () => {
     page.navigateTo();
     page.lazyModuleButton.click();
 
-    page.title.waitForDisplayed(1000);
+    page.useCaseTitle.waitForDisplayed(1000);
     page.spinner.waitForDisplayed(5000, true);
     page.list.waitForDisplayed(1000);
 

@@ -1,28 +1,5 @@
 const assert = require('assert');
-
-class UseCase6Po {
-
-  get iFrameButton() {
-    return $("#iFrame");
-  }
-
-  get intranetButton() {
-    return $('*=ntrane');
-  }
-
-  get iFrame() {
-    return $('#thRosenheim');
-  }
-
-  get subTitleFromIntranet() {
-    return $('//*[@id="c55958"]/div/h2');
-  }
-
-  navigateTo() {
-    browser.url('http://localhost:4200/');
-  }
-
-}
+const UseCase6Po = require('./use-case-6.po.js');
 
 describe('use-case-6 i-frame interaction', () => {
   let page;

@@ -1,18 +1,5 @@
 const assert = require('assert');
-
-class UseCase4Po {
-  get formInNewTabButton() {
-    return $('#formInNewTabButton');
-  }
-
-  navigateTo() {
-    browser.url('http://localhost:4200/');
-  }
-
-  get title() {
-    return $('#useCaseTitle');
-  }
-}
+const UseCase4Po = require('./use-case-4.po.js');
 
 describe('use-case-4 open form in new Tab and interact', () => {
   let page;
@@ -32,17 +19,21 @@ describe('use-case-4 open form in new Tab and interact', () => {
       // one enter into if blobk if the GUID is not equal to parent window's GUID
       if (allGUID[i] != parentGUID) {
         // switch to the guid
+        // nicht offizieller WEg
         browser.switchToWindow(allGUID[i]);
+        // offizieller Weg - Klappt nicht
+        // browser.switchWindow(parentGUID);
         // break the loop
         break;
       }
     }
-    page.title.waitForDisplayed(5000);
-    assert.equal(page.title.getText(), 'Test Fall 1');
+    page.useCaseTitle.waitForDisplayed(5000);
+    assert.equal(page.useCaseTitle.getText(), 'Test Fall 1');
+    // Hier bricht der Test immer ab!!
     // browser.close();
     // browser.switchToWindow(parentGUID);
-    // page.title.waitForDisplayed(5000, true);
-    // assert.equal(page.title, undefined);
+    // page.useCaseTitle.waitForDisplayed(5000, true);
+    // assert.equal(page.useCaseTitle, undefined);
   });
 
   // xit('Should open form in new Tab and interact', async () => {
@@ -54,8 +45,8 @@ describe('use-case-4 open form in new Tab and interact', () => {
   //     browser.switchTo().window(handles[1]);
   //   });
   //
-  //   page.title.waitForDisplayed(1000);
-  //   assert.equal(page.title.getText(), 'Test Fall 1');
+  //   page.useCaseTitle.waitForDisplayed(1000);
+  //   assert.equal(page.useCaseTitle.getText(), 'Test Fall 1');
   //
   //   // modified test from use-case 1
   //   page.formName.sendKeys('Ampletzer');
@@ -74,8 +65,8 @@ describe('use-case-4 open form in new Tab and interact', () => {
   //     browser.switchTo().window(handles[0]);
   //   });
   //
-  //   page.title.waitForDisplayed(1000, true);
-  //   assert.equal(page.title, undefined);
+  //   page.useCaseTitle.waitForDisplayed(1000, true);
+  //   assert.equal(page.useCaseTitle, undefined);
   //   assert.equal(page.formName, undefined);
   //   assert.equal(page.sentName, undefined);
   // });

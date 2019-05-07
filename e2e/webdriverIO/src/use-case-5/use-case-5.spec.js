@@ -1,28 +1,6 @@
 const assert = require('assert');
 const path = require('path');
-
-class UseCase5Po {
-  get toUploadButton() {
-    return $("#upload");
-  }
-
-  get title() {
-    return $('#useCaseTitle');
-  }
-
-  get uploadInput() {
-    return $('<input />');
-  }
-
-  get snackBarMessage() {
-    return $('#snackBarMessage');
-  }
-
-  navigateTo() {
-    browser.url('http://localhost:4200/');
-  }
-
-}
+const UseCase5Po = require('./use-case-5.po.js');
 
 describe('use-case-5 open upload-window and interact', () => {
   let page;
@@ -33,7 +11,7 @@ describe('use-case-5 open upload-window and interact', () => {
   it('Should navigate to upload-component', () => {
     page.navigateTo();
     page.toUploadButton.click();
-    assert.equal(page.title.getText(), 'Test Fall 5');
+    assert.equal(page.useCaseTitle.getText(), 'Test Fall 5');
   });
 
   it('Should pass path to file-input and fake upload', () => {

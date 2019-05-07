@@ -1,48 +1,5 @@
 const assert = require('assert');
-
-class UseCase1Po {
-  get formButton() {
-    return $('#formButton');
-  }
-
-  get formName() {
-    return $('#name');
-  }
-
-  get formFirstName() {
-    return $('#first-name');
-  }
-
-  get formSex() {
-    return $('#sex');
-  }
-
-  get title() {
-    return $('#useCaseTitle');
-  }
-
-  get saveButton() {
-    return $('.btn-success');
-  }
-
-  get sentName() {
-    return $('#sentName');
-  }
-
-  get sentFirstName() {
-    return $('#sentFirstName');
-  }
-
-  get sentSex() {
-    return $('#sentSex');
-  }
-
-  navigateTo() {
-    browser.url('http://localhost:4200/');
-  }
-
-}
-
+const UseCase1Po = require('./use-case-1.po.js');
 
 describe('use-case-1 Navigation and Form Input', () => {
   let page;
@@ -53,7 +10,7 @@ describe('use-case-1 Navigation and Form Input', () => {
   it('Should navigate To Component', () => {
     page.navigateTo();
     page.formButton.click();
-    assert.equal(page.title.getText(), 'Test Fall 1');
+    assert.equal(page.useCaseTitle.getText(), 'Test Fall 1');
   });
 
   it('Should insert Data into Form', () => {
@@ -64,8 +21,9 @@ describe('use-case-1 Navigation and Form Input', () => {
     page.formFirstName.setValue('Dominik');
 
     page.formSex.click();
-    $('#sexOption1').waitForDisplayed(1000);
-    $('#sexOption1').click();
+    let sexOption = $('#sexOption1')
+    sexOption.waitForDisplayed(1000);
+    sexOption.click();
 
     page.saveButton.click();
 
