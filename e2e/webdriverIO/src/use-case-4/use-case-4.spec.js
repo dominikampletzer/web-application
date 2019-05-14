@@ -21,6 +21,7 @@ describe('use-case-4 open form in new Tab and interact', () => {
         // switch to the guid
         // nicht offizieller WEg
         browser.switchToWindow(allGUID[i]);
+        // browser.switchTab soll es noch geben tut es nicht!
         // offizieller Weg - Klappt nicht
         // browser.switchWindow(parentGUID);
         // break the loop

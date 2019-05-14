@@ -23,8 +23,9 @@ describe('use-case-1 Navigation and Form Input', () => {
     page.formFirstName.sendKeys('Dominik');
 
     page.formSex.click();
-    browser.wait(conditions.elementToBeClickable(element(by.id('sexOption1'))), 1000);
-    element(by.id('sexOption1')).click();
+    const sexOption = element(by.id('sexOption1'));
+    browser.wait(conditions.elementToBeClickable(sexOption), 1000);
+    sexOption.click();
 
     page.saveButton.click();
 

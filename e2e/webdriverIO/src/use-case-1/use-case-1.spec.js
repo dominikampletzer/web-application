@@ -21,12 +21,11 @@ describe('use-case-1 Navigation and Form Input', () => {
     page.formFirstName.setValue('Dominik');
 
     page.formSex.click();
-    let sexOption = $('#sexOption1')
+    let sexOption = $('#sexOption1');
     sexOption.waitForDisplayed(1000);
     sexOption.click();
 
     page.saveButton.click();
-
     page.sentName.waitForDisplayed(5000);
     assert.equal(page.sentName.getText(), 'Ampletzer');
     assert.equal(page.sentFirstName.getText(), 'Dominik');
