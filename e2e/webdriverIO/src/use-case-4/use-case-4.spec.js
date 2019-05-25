@@ -37,39 +37,18 @@ describe('use-case-4 open form in new Tab and interact', () => {
     // assert.equal(page.useCaseTitle, undefined);
   });
 
-  // xit('Should open form in new Tab and interact', async () => {
-  //   page.navigateTo();
-  //   page.formInNewTabButton.click();
-  //
-  //   // Hier wird auf den Tab gewechselt, wo sich die neue View befindet
-  //   await browser.getAllWindowHandles().then((handles) => {
-  //     browser.switchTo().window(handles[1]);
-  //   });
-  //
-  //   page.useCaseTitle.waitForDisplayed(1000);
-  //   assert.equal(page.useCaseTitle.getText(), 'Test Fall 1');
-  //
-  //   // modified test from use-case 1
-  //   page.formName.sendKeys('Ampletzer');
-  //   page.formFirstName.sendKeys('Dominik');
-  //   page.formSex.click();
-  //   $('#sexOption1').waitForDisplayed(1000);
-  //   element(by.id('sexOption1')).click();
-  //   page.saveButton.click();
-  //   page.sentName.waitForDisplayed(5000);
-  //   assert.equal(page.sentName.getText(), 'Ampletzer');
-  //   assert.equal(page.sentFirstName.getText(), 'Dominik');
-  //   assert.equal(page.sentSex.getText(), 'Männlich');
-  //
-  //   browser.close();
-  //   await browser.getAllWindowHandles().then((handles) => {
-  //     browser.switchTo().window(handles[0]);
-  //   });
-  //
-  //   page.useCaseTitle.waitForDisplayed(1000, true);
-  //   assert.equal(page.useCaseTitle, undefined);
-  //   assert.equal(page.formName, undefined);
-  //   assert.equal(page.sentName, undefined);
-  // });
+  // Demo-Code klappt natürlich
+  it('should switch to another window', () => {
+    // open url
+    browser.url('https://google.com')
+    // create new window
+    browser.newWindow('https://webdriver.io')
+
+    // switch back via url match
+    browser.switchWindow('google.com')
+
+    // switch back via title match
+    browser.switchWindow('Next-gen WebDriver test framework')
+  });
 
 });
