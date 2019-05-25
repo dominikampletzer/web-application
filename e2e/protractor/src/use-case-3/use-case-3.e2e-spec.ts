@@ -1,5 +1,5 @@
 import {browser, protractor, ProtractorExpectedConditions} from 'protractor';
-import {UseCase3Po} from './useCase3.po';
+import {UseCase3Po} from './use-case-3.po';
 
 describe('use-case-3 open dialog with overlapping dialog', () => {
   let page: UseCase3Po;

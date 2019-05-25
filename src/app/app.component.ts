@@ -11,8 +11,8 @@ import {DialogComponent} from './dialog/dialog.component';
 
     <button (click)="navigateTo('form')" id="formButton">Form</button>
     <button class="lazy" (click)="navigateTo('lazy')">Lazy Module</button>
-    <button (click)="navigateTo('upload')">Upload</button>
-    <button (click)="navigateTo('iFrame')">iFrame</button>
+    <button id="upload" (click)="navigateTo('upload')">Upload</button>
+    <button id='iFrame'(click)="navigateTo('iFrame')">iFrame</button>
     <button id="openDialogButton" (click)="openDialog()">Dialog Öffnen</button>
     <button id="formInNewTabButton" (click)="openPageInNewTab('form')">Form in neuem Tab</button>
     <button id="lazyInNewTabButton" (click)="openPageInNewTab('lazy')">Lazy in neuem Tab</button>
