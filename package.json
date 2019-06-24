@@ -10,7 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "e2e:no-build": "ng e2e --webdriver-update=true --devServerTarget=",
-    "pro_no_ng": "node_modules/.bin/protractor e2e/protractor/protractor.conf.js"
+    "pro_no_ng": "node_modules/.bin/protractor e2e/protractor/protractor.conf.js",
+    "wdio_cli": "./node_modules/.bin/wdio",
+    "wtest": "./node_modules/.bin/wdio wdio.conf.js"
   },
   "private": true,
   "dependencies": {
@@ -35,10 +37,18 @@
     "@angular/cli": "~7.1.4",
     "@angular/compiler-cli": "~7.1.0",
     "@angular/language-service": "~7.1.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "@wdio/cli": "^5.8.1",
+    "@wdio/dot-reporter": "^5.7.8",
+    "@wdio/firefox-profile-service": "^5.7.8",
+    "@wdio/jasmine-framework": "^5.8.1",
+    "@wdio/local-runner": "^5.8.1",
+    "@wdio/selenium-standalone-service": "^5.8.0",
+    "@wdio/sync": "^5.8.1",
     "codelyzer": "~4.5.0",
+    "geckodriver": "^1.16.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",
@@ -49,6 +59,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "webdriverio": "^5.8.1"
   }
 }

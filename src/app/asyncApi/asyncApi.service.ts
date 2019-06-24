@@ -1,27 +1,20 @@
 import {Injectable} from '@angular/core';
+import {SnackBarHelperService} from '../uiFrameworks/snack-bar-helper.service';
 
 
 @Injectable()
 export class AsyncApiService {
 
-  constructor() {
+  constructor(private snackBarHelper: SnackBarHelperService) {
   }
 
   public async getSomeReturnBool(): Promise<boolean> {
-    const tempProm: Promise<boolean> = new Promise((resolve) => {
-      const randomTime: number = Math.round(Math.random() * 4500);
-      setTimeout(() => resolve(true), randomTime);
-    });
-    await tempProm.then();
+    await this.randomTimeOut().then();
     return Promise.resolve(true);
   }
 
   public async getSomeCustomItems(): Promise<CustomItem[]> {
-    const tempProm: Promise<boolean> = new Promise((resolve) => {
-      const randomTime: number = Math.round(Math.random() * 4500);
-      setTimeout(() => resolve(true), randomTime);
-    });
-    await tempProm.then();
+    await this.randomTimeOut().then();
 
     const someCustomItems: CustomItem[] = [
         {
@@ -42,8 +35,20 @@ export class AsyncApiService {
 
       ]
     ;
-
     return Promise.resolve(someCustomItems);
+  }
+
+  public async uploadFile(file: File): Promise<boolean> {
+    await this.randomTimeOut().then();
+    this.snackBarHelper.openSnackbar(file.name + ' ' + file.size);
+    return Promise.resolve(true);
+  }
+
+  private randomTimeOut(): Promise<boolean> {
+    return new Promise((resolve) => {
+      const randomTime: number = Math.round(Math.random() * 4500);
+      setTimeout(() => resolve(true), randomTime);
+    });
   }
 }
 

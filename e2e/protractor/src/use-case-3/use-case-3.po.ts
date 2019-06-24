@@ -1,16 +1,12 @@
-import {browser, by, element, ElementFinder, promise} from 'protractor';
+import {by, element, ElementFinder, promise} from 'protractor';
+import {AppPage} from '../app.po';
 
-export class UseCase3Po {
-
+export class UseCase3Po  extends AppPage {
   public dialogOpenButton: ElementFinder = element(by.id('openDialogButton'));
   public firstTitle: ElementFinder = element(by.id('dialogTitle'));
   public firstSpinner: ElementFinder = element(by.id('spinner'));
   public firstList: ElementFinder = element(by.id('list'));
   public snackBarMessage: ElementFinder = element(by.id('snackBarMessage'));
-
-  navigateTo() {
-    return browser.get('/');
-  }
 
   getRow(index?: number): ElementFinder {
     return element(by.id('customItem' + index || '0'));
