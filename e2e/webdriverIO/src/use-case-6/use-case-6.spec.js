@@ -15,7 +15,7 @@ describe('use-case-6 i-frame interaction', () => {
     browser.switchToFrame(page.iFrame);
     page.intranetButton.waitForDisplayed(5000);
     page.intranetButton.click();
-    page.subTitleFromIntranet.waitForDisplayed(5000);
+    page.subTitleFromIntranet.waitForDisplayed(30000);
     assert.equal(page.subTitleFromIntranet.getText(), 'Benutzeranmeldung für den geschlossenen Benutzerbereich');
   });
 

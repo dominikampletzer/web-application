@@ -41,18 +41,14 @@ Es wird ein aktuelles NodeJS benötigt!
 Mit 'npm install' werden alle benötigten Dependencies installiert.
 Der Dev-Server und damit die Anwendung kann mittels 'npm run start' gestartet werden und ist unter `http://localhost:4200/` erreichbar.
 
-## Build
+## Protractor Tests
 
-Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Wenn der Dev-Server gestartet ist können die Protractor-Tests mittels 'npm run pro_no_ng' direkt über Protractor gestartet werden. Oder mittels 'e2e:no-build'
+durch die Angular-CLI
 
-## Running end-to-end tests
+## WebdriverIO Tests
 
-Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
+Ebenfalls muss der Dev-Server gestartet sein. Danach kann mittels 'npm run wtest' die Tests ausgeführt werden.
 
 
 

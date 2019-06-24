@@ -15,10 +15,11 @@ describe('use-case-6 i-frame interaction', () => {
     browser.wait(conditions.visibilityOf(page.iFrame), 5000);
     browser.switchTo().frame(page.iFrame.getWebElement());
     browser.waitForAngularEnabled(false);
-    browser.wait(conditions.visibilityOf(page.intranetButton), 5000);
+    browser.wait(conditions.elementToBeClickable(page.intranetButton), 5000);
     page.intranetButton.click();
-    browser.wait(conditions.visibilityOf(page.subTitleFromIntranet), 5000);
+    browser.wait(conditions.visibilityOf(page.subTitleFromIntranet), 30000);
     expect(page.subTitleFromIntranet.getText()).toBe('Benutzeranmeldung für den geschlossenen Benutzerbereich');
+    browser.sleep(5000);
   });
 
 });
